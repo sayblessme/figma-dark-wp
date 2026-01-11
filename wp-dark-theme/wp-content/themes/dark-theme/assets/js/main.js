@@ -156,11 +156,12 @@
             const formData = new FormData(form);
             const name = formData.get('name');
             const email = formData.get('email');
+            const phone = formData.get('phone') || '';
             const message = formData.get('message');
 
             // Basic validation
             if (!name || !email || !message) {
-                showMessage('Пожалуйста, заполните все поля.', 'error');
+                showMessage('Пожалуйста, заполните все обязательные поля.', 'error');
                 return;
             }
 
@@ -181,6 +182,7 @@
             data.append('nonce', darkTheme.nonce);
             data.append('name', name);
             data.append('email', email);
+            data.append('phone', phone);
             data.append('message', message);
 
             // Send AJAX request

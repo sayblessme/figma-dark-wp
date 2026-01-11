@@ -15,47 +15,47 @@ $title       = dark_theme_get_field( 'portfolio_title', 'Успешные про
 $description = dark_theme_get_field( 'portfolio_description', 'Мы гордимся каждым приложением, которое создали для наших клиентов' );
 $projects    = dark_theme_get_field( 'portfolio_items', array() );
 
-// Default projects if not set
+// Default projects if not set - from PDF design
 if ( empty( $projects ) ) {
     $projects = array(
         array(
-            'image' => array( 'url' => DARK_THEME_URI . '/assets/images/portfolio-1.jpg' ),
+            'image' => array( 'url' => DARK_THEME_URI . '/assets/images/portfolio-fitpro.jpg' ),
             'category' => 'Фитнес приложение',
             'title' => 'FitPro',
             'description' => 'Персональный тренер в кармане с AI-рекомендациями',
             'rating' => '4.8',
             'downloads' => '500K+ загрузок',
-            'technologies' => 'Swift, Firebase, CoreML',
+            'technologies' => 'iOS, Android, HealthKit',
             'link' => '#',
         ),
         array(
-            'image' => array( 'url' => DARK_THEME_URI . '/assets/images/portfolio-2.jpg' ),
-            'category' => 'Финтех приложение',
-            'title' => 'PayFlow',
-            'description' => 'Удобные платежи и переводы в одном приложении',
+            'image' => array( 'url' => DARK_THEME_URI . '/assets/images/portfolio-foodhub.jpg' ),
+            'category' => 'Доставка еды',
+            'title' => 'FoodHub',
+            'description' => 'Удобный сервис заказа еды из любимых ресторанов',
             'rating' => '4.9',
             'downloads' => '1M+ загрузок',
-            'technologies' => 'Kotlin, Retrofit, Room',
+            'technologies' => 'React Native, Maps, Payments',
             'link' => '#',
         ),
         array(
-            'image' => array( 'url' => DARK_THEME_URI . '/assets/images/portfolio-3.jpg' ),
+            'image' => array( 'url' => DARK_THEME_URI . '/assets/images/portfolio-shopeasy.jpg' ),
             'category' => 'E-commerce',
             'title' => 'ShopEasy',
             'description' => 'Маркетплейс с AR-примеркой товаров',
             'rating' => '4.7',
-            'downloads' => '250K+ загрузок',
-            'technologies' => 'React Native, Node.js',
+            'downloads' => '750K+ загрузок',
+            'technologies' => 'Flutter, Payment Gateway, AR',
             'link' => '#',
         ),
         array(
-            'image' => array( 'url' => DARK_THEME_URI . '/assets/images/portfolio-4.jpg' ),
-            'category' => 'Социальная сеть',
-            'title' => 'ConnectHub',
-            'description' => 'Платформа для нетворкинга профессионалов',
-            'rating' => '4.6',
-            'downloads' => '100K+ загрузок',
-            'technologies' => 'Flutter, Firebase, GraphQL',
+            'image' => array( 'url' => DARK_THEME_URI . '/assets/images/portfolio-moneyflow.jpg' ),
+            'category' => 'Финансы',
+            'title' => 'MoneyFlow',
+            'description' => 'Умный контроль финансов с аналитикой расходов',
+            'rating' => '4.9',
+            'downloads' => '300K+ загрузок',
+            'technologies' => 'Swift, Security, Analytics',
             'link' => '#',
         ),
     );
@@ -66,7 +66,7 @@ if ( empty( $projects ) ) {
     <div class="portfolio-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="section-header text-center max-w-3xl mx-auto mb-16">
-            <span class="section-label text-blue-400 font-semibold">
+            <span class="section-label text-blue-400 font-semibold uppercase tracking-wider">
                 <?php echo esc_html( $label ); ?>
             </span>
             <h2 class="section-title mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
@@ -86,12 +86,13 @@ if ( empty( $projects ) ) {
             ?>
             <article class="portfolio-card group bg-zinc-950 rounded-2xl overflow-hidden border border-zinc-800 hover:border-blue-500/50 transition-all hover:shadow-xl hover:shadow-blue-500/10">
                 <!-- Image -->
-                <div class="portfolio-image-wrapper relative h-64 overflow-hidden">
+                <div class="portfolio-image-wrapper relative h-64 overflow-hidden bg-gradient-to-br from-blue-600/20 to-purple-600/20">
                     <img
                         src="<?php echo esc_url( $image_url ); ?>"
                         alt="<?php echo esc_attr( $image_alt ); ?>"
                         class="portfolio-image w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         loading="lazy"
+                        onerror="this.style.display='none'"
                     >
                     <div class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent"></div>
 

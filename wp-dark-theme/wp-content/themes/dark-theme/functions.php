@@ -576,11 +576,18 @@ function dark_theme_register_acf_fields() {
                 'default_value' => 'Email',
             ),
             array(
+                'key' => 'field_form_phone_placeholder',
+                'label' => 'Phone Field Placeholder',
+                'name' => 'form_phone_placeholder',
+                'type' => 'text',
+                'default_value' => 'Телефон',
+            ),
+            array(
                 'key' => 'field_form_message_placeholder',
                 'label' => 'Message Field Placeholder',
                 'name' => 'form_message_placeholder',
                 'type' => 'text',
-                'default_value' => 'Расскажите о вашем проекте',
+                'default_value' => 'Сообщение',
             ),
             array(
                 'key' => 'field_form_button_text',
@@ -691,22 +698,24 @@ function dark_theme_contact_form_handler() {
 
     $name    = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
     $email   = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
+    $phone   = isset( $_POST['phone'] ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '';
     $message = isset( $_POST['message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) ) : '';
 
     if ( empty( $name ) || empty( $email ) || empty( $message ) ) {
-        wp_send_json_error( array( 'message' => __( 'Please fill in all fields.', 'dark-theme' ) ) );
+        wp_send_json_error( array( 'message' => __( 'Пожалуйста, заполните все обязательные поля.', 'dark-theme' ) ) );
     }
 
     if ( ! is_email( $email ) ) {
-        wp_send_json_error( array( 'message' => __( 'Please enter a valid email address.', 'dark-theme' ) ) );
+        wp_send_json_error( array( 'message' => __( 'Пожалуйста, введите корректный email.', 'dark-theme' ) ) );
     }
 
     $to      = get_option( 'admin_email' );
-    $subject = sprintf( __( 'New Contact Form Submission from %s', 'dark-theme' ), $name );
+    $subject = sprintf( __( 'Новая заявка с сайта от %s', 'dark-theme' ), $name );
     $body    = sprintf(
-        __( "Name: %s\nEmail: %s\n\nMessage:\n%s", 'dark-theme' ),
+        "Имя: %s\nEmail: %s\nТелефон: %s\n\nСообщение:\n%s",
         $name,
         $email,
+        $phone ? $phone : 'Не указан',
         $message
     );
     $headers = array(
@@ -717,9 +726,9 @@ function dark_theme_contact_form_handler() {
     $sent = wp_mail( $to, $subject, $body, $headers );
 
     if ( $sent ) {
-        wp_send_json_success( array( 'message' => __( 'Thank you! Your message has been sent.', 'dark-theme' ) ) );
+        wp_send_json_success( array( 'message' => __( 'Спасибо! Ваше сообщение отправлено.', 'dark-theme' ) ) );
     } else {
-        wp_send_json_error( array( 'message' => __( 'There was an error sending your message. Please try again.', 'dark-theme' ) ) );
+        wp_send_json_error( array( 'message' => __( 'Произошла ошибка. Пожалуйста, попробуйте позже.', 'dark-theme' ) ) );
     }
 }
 add_action( 'wp_ajax_dark_theme_contact', 'dark_theme_contact_form_handler' );
