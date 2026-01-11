@@ -15,7 +15,7 @@ $title       = dark_theme_get_field( 'portfolio_title', 'Успешные про
 $description = dark_theme_get_field( 'portfolio_description', 'Мы гордимся каждым приложением, которое создали для наших клиентов' );
 $projects    = dark_theme_get_field( 'portfolio_items', array() );
 
-// Default projects if not set - from PDF design
+// Default projects if not set - from Figma design
 if ( empty( $projects ) ) {
     $projects = array(
         array(
@@ -32,7 +32,7 @@ if ( empty( $projects ) ) {
             'image' => array( 'url' => DARK_THEME_URI . '/assets/images/portfolio-foodhub.jpg' ),
             'category' => 'Доставка еды',
             'title' => 'FoodHub',
-            'description' => 'Удобный сервис заказа еды из любимых ресторанов',
+            'description' => 'Быстрая доставка еды из любимых ресторанов',
             'rating' => '4.9',
             'downloads' => '1M+ загрузок',
             'technologies' => 'React Native, Maps, Payments',
@@ -42,7 +42,7 @@ if ( empty( $projects ) ) {
             'image' => array( 'url' => DARK_THEME_URI . '/assets/images/portfolio-shopeasy.jpg' ),
             'category' => 'E-commerce',
             'title' => 'ShopEasy',
-            'description' => 'Маркетплейс с AR-примеркой товаров',
+            'description' => 'Удобный онлайн-шопинг с персональными рекомендациями',
             'rating' => '4.7',
             'downloads' => '750K+ загрузок',
             'technologies' => 'Flutter, Payment Gateway, AR',

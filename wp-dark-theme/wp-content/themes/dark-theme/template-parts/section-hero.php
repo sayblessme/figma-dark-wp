@@ -30,7 +30,7 @@ if ( empty( $stats ) ) {
 }
 
 // Default hero image
-$hero_image_url = ! empty( $hero_image['url'] ) ? $hero_image['url'] : DARK_THEME_URI . '/assets/images/hero-placeholder.jpg';
+$hero_image_url = ! empty( $hero_image['url'] ) ? $hero_image['url'] : DARK_THEME_URI . '/assets/images/hero-image.jpg';
 $hero_image_alt = ! empty( $hero_image['alt'] ) ? $hero_image['alt'] : 'Mobile App Development';
 ?>
 
