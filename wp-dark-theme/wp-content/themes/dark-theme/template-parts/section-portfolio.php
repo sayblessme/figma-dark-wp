@@ -52,7 +52,7 @@ if ( empty( $projects ) ) {
             'image' => array( 'url' => DARK_THEME_URI . '/assets/images/portfolio-moneyflow.jpg' ),
             'category' => 'Финансы',
             'title' => 'MoneyFlow',
-            'description' => 'Умный контроль финансов с аналитикой расходов',
+            'description' => 'Управление финансами и инвестициями в одном месте',
             'rating' => '4.9',
             'downloads' => '300K+ загрузок',
             'technologies' => 'Swift, Security, Analytics',
@@ -153,6 +153,18 @@ if ( empty( $projects ) ) {
                 </div>
             </article>
             <?php endforeach; ?>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="portfolio-cta text-center mt-16">
+            <a href="#contact" class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                Обсудить ваш проект
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6"></path>
+                    <path d="M10 14 21 3"></path>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                </svg>
+            </a>
         </div>
     </div>
 </section>

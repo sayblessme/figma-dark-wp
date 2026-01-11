@@ -115,9 +115,9 @@ function dark_theme_get_contact_icon( $icon_name ) {
                 </div>
 
                 <!-- Working Hours -->
-                <div class="p-6 bg-gradient-to-br from-blue-600/10 to-cyan-600/10 rounded-xl border border-blue-500/20">
-                    <h4 class="text-white font-semibold mb-3">Режим работы</h4>
-                    <div class="space-y-2 text-gray-400">
+                <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800">
+                    <h4 class="text-white font-semibold mb-4">Режим работы</h4>
+                    <div class="space-y-3 text-gray-400">
                         <div class="flex justify-between">
                             <span>Понедельник - Пятница</span>
                             <span class="text-white">9:00 - 18:00</span>
