@@ -1,0 +1,57 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+vendor/
+
+# Build output
+dist/
+build/
+
+# WordPress specific (not needed in theme repo)
+wp-dark-theme/wp-content/uploads/
+wp-dark-theme/wp-content/upgrade/
+wp-dark-theme/wp-content/cache/
+wp-dark-theme/wp-content/backup-db/
+wp-dark-theme/wp-content/backups/
+wp-dark-theme/wp-content/blogs.dir/
+wp-dark-theme/wp-content/plugins/
+wp-dark-theme/wp-content/mu-plugins/
+
+# WordPress Core (not included)
+*.sql
+*.sql.gz
+
+# Environment
+.env
+.env.local
+.env.*.local
+wp-config.php
+
+# Cache
+*.cache
+
+# Misc
+.sass-cache/
+*.css.map
+*.min.css
+*.min.js
